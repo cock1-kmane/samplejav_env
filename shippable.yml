@@ -4,18 +4,21 @@ language: java
 # Version number
 jdk:
   - openjdk6
-  #- openjdk7
-  #- oraclejdk7
-  #- oraclejdk8
+  - openjdk7
+  - oraclejdk7
+  - oraclejdk8
   
-env: 
-  global:
+env:
     - TOO=FUTU
-    - FOO=GUTU
-    - key1=aaa
-    - key3=bbbb
+    - secure: WlI1oi8NGy3vWkkr01UtVNuXhctxyue0TpjgEloHiMlrI1hFyJd+67WMFjAtVA2Kd0vWgwSXx1Al5YU6HErZopGg1v+72pAIQAWvIkbYeycv1vXGkYq4tGqh2pPGalpfEukOVHaD2iQrald41U6R2Y7wy+KX0mzJQ7YVjMCOaT81CUjC4jKrQMwPp8mLC6yJe3nR9wwUuWdLIP9mh3lkVgPMwlAbsqaRuFBRYfQ4XdWwgHobFWJxTRmu0IqFTdfQgHpJWKZMr+a2UatSTeTKtVM+t3cl9OSunWc44ZtHpE7z3Ioqx83BoHBKZOuGStduIqFjqizgcmbVH7OTVX1e7w==
+    #- FOO=GUTU
+    #- key1=aaa
+    #- key3=bbbb
     
-#matrix:
+matrix:
+  allow_failure:
+    - jdk: "oraclejdk8"
+      env: test^=test123
  # include:
   #  - jdk: "oraclejdk8"
    #   env:
@@ -28,5 +31,3 @@ build:
     - java -version
     - echo "$TOO"
     - echo "$FOO"
-    - echo "$key1"
-    - echo "$key3"
