@@ -7,7 +7,26 @@ jdk:
   - openjdk7
   - oraclejdk7
   - oraclejdk8
+  
+env: 
+  global:
+    - TOO=FUTU
+    - FOO=GUTU
+    
+matrix:
+  include:
+    - jdk: "oraclejdk8"
+      env:
+        - key1=aaa
+        - key3=bbbb
+  exclude:
+    - jdk: "openjdk6"
 
 build:
   ci:
     - java -version
+    - echo "$TOO"
+    - echo "$FOO"
+    - echo "$key1"
+    - echo "$key3"
+    
