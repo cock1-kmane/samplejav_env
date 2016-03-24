@@ -12,15 +12,16 @@ env:
   global:
     - TOO=FUTU
     - FOO=GUTU
+    - key1=aaa
+    - key3=bbbb
     
-matrix:
-  include:
-    - jdk: "oraclejdk8"
-      env:
-        - key1=aaa
-        - key3=bbbb
-  exclude:
-    - jdk: "openjdk6"
+#matrix:
+ # include:
+  #  - jdk: "oraclejdk8"
+   #   env:
+        
+  #exclude:
+   # - jdk: "openjdk6"
 
 build:
   ci:
