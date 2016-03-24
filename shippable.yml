@@ -18,10 +18,10 @@ env:
 matrix:
   allow_failure:
     - jdk: "oraclejdk8"
+      
+  include:
+    - jdk: "oraclejdk8"
       env: test^=test123
- # include:
-  #  - jdk: "oraclejdk8"
-   #   env:
         
   #exclude:
    # - jdk: "openjdk6"
